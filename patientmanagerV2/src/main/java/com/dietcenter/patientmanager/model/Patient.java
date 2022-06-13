@@ -8,20 +8,20 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
-    Long id;
-    String sName;
-    String sSurname;
-    double dWeight;
-    String sColorHex;
-    String sDreamText;
+    private Long id;
+    private String name;
+    private String surname;
+    private double weight;
+    private double height;
+    private double imc;
+    private String colorHex;
 
     public Patient(Long id, String sName, String sSurname, double dWeight, String sColorHex, String sDreamText) {
         this.id = id;
-        this.sName = sName;
-        this.sSurname = sSurname;
-        this.dWeight = dWeight;
-        this.sColorHex = sColorHex;
-        this.sDreamText = sDreamText;
+        this.name = sName;
+        this.surname = sSurname;
+        this.weight = dWeight;
+        this.colorHex = sColorHex;
     }
 
     public Patient() {
@@ -31,7 +31,7 @@ public class Patient {
     public String toString(){
         return "Patient{" +
                 "id=" + id +
-                ", name='" + sName + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 
@@ -44,42 +44,51 @@ public class Patient {
     }
 
     public String getName() {
-        return sName;
+        return name;
     }
 
     public void setName(String sName) {
-        this.sName = sName;
+        this.name = sName;
     }
 
     public String getSurname() {
-        return sSurname;
+        return surname;
     }
 
     public void setSurname(String sSurname) {
-        this.sSurname = sSurname;
+        this.surname = sSurname;
     }
 
     public double getWeight() {
-        return dWeight;
+        return weight;
     }
 
     public void setWeight(double dWeight) {
-        this.dWeight = dWeight;
+        this.weight = dWeight;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double dHeight) {
+        this.height = dHeight;
+    }
+
+    public double getImc() {
+        return imc;
+    }
+
+    public void setImc(double dImc) {
+        this.imc = imc;
     }
 
     public String getColorHex() {
-        return sColorHex;
+        return colorHex;
     }
 
     public void setColorHex(String sColorHex) {
-        this.sColorHex = sColorHex;
+        this.colorHex = sColorHex;
     }
 
-    public String getsDreamText() {
-        return sDreamText;
-    }
-
-    public void setsDreamText(String sDreamText) {
-        this.sDreamText = sDreamText;
-    }
 }
