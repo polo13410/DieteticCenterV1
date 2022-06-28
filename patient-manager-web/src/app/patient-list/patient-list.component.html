@@ -1,0 +1,35 @@
+
+            <div class="card-body px-3 px-md-5">
+                <div *ngFor="let patient of patients" class="row">
+                    <div class="col-lg-6 col-xl-4 col-md-6 col-sm-12">
+                        <div style="background-color: {{patient.colorHex}}" class="card card-default p-4">
+                            <a href="javascript:0" class="media text-secondary" data-toggle="modal"
+                                data-target="#modal-contact">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar{{patient.id}}.png"
+                                    class="mr-3 img-fluid rounded" alt="Avatar Image" />
+                                <div class="media-body">
+                                    <h5 class="mt-0 mb-2 text-white"><i class="mdi mdi-toggle-switch mr-1"></i>{{patient.name}} {{patient.surname}}</h5>
+                                    <ul class="list-unstyled text-white">
+                                        <!-- <li class="d-flex">
+                                            <i class="mdi mdi-map mr-1"></i>
+                                            <span>id = {{patient.id}}</span>
+                                        </li> -->
+                                        <li class="d-flex">
+                                            <i class="mdi mdi-trending-up mr-1"></i>
+                                            <span> IMC : {{patient.imc}}</span>
+                                        </li>
+                                        <li class="d-flex">
+                                            <i class="mdi mdi-human-male-height-variant mr-1"></i>
+                                            <span>{{patient.height}} cm</span>
+                                        </li>
+                                        <li class="d-flex">
+                                            <i class="mdi mdi-weight-kilogram mr-1"></i>
+                                            <span>{{patient.weight}} kg</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>

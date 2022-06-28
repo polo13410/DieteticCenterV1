@@ -3,6 +3,8 @@ export interface Patient {
     name: string;
     surname: string;
     weight: number;
+    height: number;
+    imc : number;
     colorHex: number;
 
 }

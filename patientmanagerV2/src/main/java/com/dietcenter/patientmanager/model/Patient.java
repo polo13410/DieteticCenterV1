@@ -15,13 +15,15 @@ public class Patient {
     private double height;
     private double imc;
     private String colorHex;
+    private String status;
 
-    public Patient(Long id, String sName, String sSurname, double dWeight, String sColorHex, String sDreamText) {
+    public Patient(Long id, String sName, String sSurname, double dWeight, String sColorHex, String status) {
         this.id = id;
         this.name = sName;
         this.surname = sSurname;
         this.weight = dWeight;
         this.colorHex = sColorHex;
+        this.status = status;
     }
 
     public Patient() {
@@ -89,6 +91,14 @@ public class Patient {
 
     public void setColorHex(String sColorHex) {
         this.colorHex = sColorHex;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 }

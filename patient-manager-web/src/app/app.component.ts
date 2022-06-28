@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   }
 
   public getPatients(): void{
-    this.patientService.getPatients().subscribe(
+    this.patientService.getActives().subscribe(
       (response: Patient[]) => {
         this.patients = response;
       },

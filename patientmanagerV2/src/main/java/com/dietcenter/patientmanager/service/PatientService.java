@@ -10,6 +10,8 @@ import java.util.List;
 
 @Service
 public class PatientService {
+
+    @Autowired
     PatientRepository pr;
 
     @Autowired
@@ -30,9 +32,13 @@ public class PatientService {
     }
 
     public List<Patient> findAllPatients(){
-        return pr.findAll();
+        return (List<Patient>) pr.findAll();
     }
 
-    public Patient findPatientById(Long id){return pr.findById(id).orElseThrow(() -> new PatientException("User with ID = " + id + " not found"));}
+    public List<Patient> findActivePatients(){
+        return (List<Patient>) pr.selectActives();
+    }
+
+    public Patient findPatientById(Long id){return pr.findById(id).orElseThrow(() -> new PatientException("User ID: " + id + " not found"));}
 
 }

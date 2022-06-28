@@ -3,6 +3,7 @@ package com.dietcenter.patientmanager;
 
 import com.dietcenter.patientmanager.model.Patient;
 import com.dietcenter.patientmanager.service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,12 @@ public class PatientController {
     @GetMapping("/all")
     public ResponseEntity<List<Patient>> getAllPatients(){
         List<Patient> lPatients = psMain.findAllPatients();
+        return new ResponseEntity<>(lPatients, HttpStatus.OK);
+    }
+
+    @GetMapping("/actives")
+    public ResponseEntity<List<Patient>> getActivePatients(){
+        List<Patient> lPatients = psMain.findActivePatients();
         return new ResponseEntity<>(lPatients, HttpStatus.OK);
     }
 
