@@ -30,7 +30,7 @@ public class Patient {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Patient{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
@@ -82,7 +82,7 @@ public class Patient {
     }
 
     public void setImc(double dImc) {
-        this.imc = imc;
+        this.imc = dImc;
     }
 
     public String getColorHex() {
